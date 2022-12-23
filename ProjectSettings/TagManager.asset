@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Enemy
+  - DialogueHeaderText
+  - DialogueBodyText
+  - DialogueBox
+  - PlayerHurtbox
+  - EnemyHurtbox
+  - ObjectHurtbox
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - IgnoreLight
+  - Water
+  - UI
+  - Character
+  - ImmuneState
+  - Obstacle
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 676253643
+    locked: 0
+  - name: IgnoreSpotLight
+    uniqueID: 4158763949
+    locked: 0

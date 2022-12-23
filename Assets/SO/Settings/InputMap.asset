@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd3a028a8573469caf069d8c9f49cfe2, type: 3}
+  m_Name: InputMap
+  m_EditorClassIdentifier: 
+  KeyMap:
+    m_keys: 000000000100000002000000030000000400000005000000
+    m_values: 300100002000000065000000090000002d01000074000000
+  <HorizontalAxisKeys>k__BackingField:
+    <Positive>k__BackingField: 100
+    <Negative>k__BackingField: 97
+  <VerticalAxisKeys>k__BackingField:
+    <Positive>k__BackingField: 119
+    <Negative>k__BackingField: 115

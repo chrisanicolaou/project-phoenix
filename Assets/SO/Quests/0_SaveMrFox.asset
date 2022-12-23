@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e8b30099f4848c0893759b13049de6c, type: 3}
+  m_Name: 0_SaveMrFox
+  m_EditorClassIdentifier: 
+  _activeQuestsStore: {fileID: 11400000, guid: cbde48a3142d2704499093248bb200f2, type: 2}
+  _questUnlockedEvent: {fileID: 11400000, guid: a3d504e24c2caa541b9ec331e4d661f3, type: 2}
+  _questActivatedEvent: {fileID: 11400000, guid: 40c593e741789f54787554beb6c60994, type: 2}
+  <Id>k__BackingField: 0
+  <Name>k__BackingField: Save Mr. Fox!
+  <Description>k__BackingField: Do some bandit killin
+  <Type>k__BackingField: 2
+  <Steps>k__BackingField:
+  - rid: 4120348738366472196
+  - rid: 4120348738366472194
+  <State>k__BackingField: 2
+  <UnlockOnCompletion>k__BackingField: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 4120348738366472194
+      type: {class: InteractAndReturnQuestItemStep, ns: ChiciStudios.ProjectPhoenix.Questing.Steps, asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: 1
+        <ParentQuest>k__BackingField: {fileID: 11400000}
+        _npcInteractionCompleteEvent: {fileID: 11400000, guid: 576730a44f654fa4c9527d5f9b6716f4, type: 2}
+        <NpcId>k__BackingField: 0
+        <ItemId>k__BackingField: 3
+        <AmountToReturn>k__BackingField: 5
+        _inventory: {fileID: 11400000, guid: 89084312ff7342147b4716b6a86cbebb, type: 2}
+    - rid: 4120348738366472196
+      type: {class: GatherStep, ns: ChiciStudios.ProjectPhoenix.Questing.Steps, asm: Assembly-CSharp}
+      data:
+        <Type>k__BackingField: 3
+        <ParentQuest>k__BackingField: {fileID: 11400000}
+        _lootGatheredEvent: {fileID: 11400000, guid: a37991ffa36c8d14280d61813b61502b, type: 2}
+        <ItemId>k__BackingField: 3
+        <GatherRequirement>k__BackingField: 5

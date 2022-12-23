@@ -1,0 +1,46 @@
+﻿{
+  "villageLevelDialogs": [
+    {
+      "villageLevel": 1,
+      "dialog": [
+        "It's sad to see what's happened to this place."
+      ]
+    }
+  ],
+  "questDialogs": [
+    {
+      "questId": 0,
+      "steps": [
+        {
+          "stepIndex": 0,
+          "stepStartingDialog": [
+            "Hey, you there! Over here!",
+            "Please, you have to help me.",
+            "Bandits have swarmed my home and now its not safe for me!",
+            "Can you take care of them?"
+          ],
+          "stepIncompleteDialog": [
+          ],
+          "stepCompleteDialog": []
+        },
+        {
+          "stepIndex": 1,
+          "stepStartingDialog": [],
+          "stepIncompleteDialog": [
+            "Have you gotten those nasty bandits yet?",
+            "Please, hurry!"
+          ],
+          "stepCompleteDialog": []
+        },
+        {
+          "stepIndex": 2,
+          "stepStartingDialog": [],
+          "stepIncompleteDialog": [
+            "You are the best! Ty sm! : )"
+          ],
+          "stepCompleteDialog": []
+        }
+      ]
+    }
+  ]
+}

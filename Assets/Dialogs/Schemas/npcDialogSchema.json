@@ -1,0 +1,110 @@
+﻿{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "villageLevelDialog": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "villageLevel": {
+              "type": "integer"
+            },
+            "dialog": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "string"
+                }
+              ]
+            }
+          },
+          "required": [
+            "villageLevel",
+            "dialog"
+          ]
+        }
+      ]
+    },
+    "questDialogs": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "questId": {
+              "type": "integer"
+            },
+            "steps": {
+              "type": "array",
+              "items": [
+                {
+                  "type": "object",
+                  "properties": {
+                    "stepIndex": {
+                      "type": "integer"
+                    },
+                    "stepStartingDialog": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "stepIncompleteDialog": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    },
+                    "stepCompleteDialog": {
+                      "type": "array",
+                      "items": [
+                        {
+                          "type": "string"
+                        },
+                        {
+                          "type": "string"
+                        }
+                      ]
+                    }
+                  },
+                  "required": [
+                    "stepIndex",
+                    "stepStartingDialog",
+                    "stepIncompleteDialog",
+                    "stepCompleteDialog"
+                  ]
+                }
+              ]
+            }
+          },
+          "required": [
+            "questId",
+            "steps"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "villageLevelDialogs",
+    "questDialogs"
+  ]
+}

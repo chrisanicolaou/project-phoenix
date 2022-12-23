@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8805dbf8f87d41f48a8903f615c96db9, type: 3}
+  m_Name: 0_Fox
+  m_EditorClassIdentifier: 
+  <Id>k__BackingField: 0
+  <Name>k__BackingField: Mr. Fox
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
+  <DialogSprite>k__BackingField: {fileID: 21300000, guid: 72de0c64f2c6a498096698322c976a67, type: 3}
+  <DefaultDialog>k__BackingField:
+    <VillageLevelDialogs>k__BackingField:
+    - <VillageLevel>k__BackingField: 0
+      <Dialog>k__BackingField:
+      - The Plains used to be a magical place...
+      - Things just haven't been the same since the Chiki disappeared.
+  <QuestsToActivate>k__BackingField:
+  - <Quest>k__BackingField: {fileID: 11400000, guid: 53bfc2ed64bee184ba6930de9312b8a7, type: 2}
+    <ActivationDialogs>k__BackingField:
+    - Those rotten bandits have stolen my coins!
+    - Can you get them back for me?
+  <SubscribedQuests>k__BackingField:
+  - <Quest>k__BackingField: {fileID: 11400000, guid: 53bfc2ed64bee184ba6930de9312b8a7, type: 2}
+    <Steps>k__BackingField:
+    - <StepIndex>k__BackingField: 0
+      <StepStartingDialog>k__BackingField: []
+      <StepIncompleteDialog>k__BackingField:
+      - Have you gotten my gold back yet?
+      <StepCompleteDialog>k__BackingField: []
+    - <StepIndex>k__BackingField: 1
+      <StepStartingDialog>k__BackingField: []
+      <StepIncompleteDialog>k__BackingField:
+      - Lets fucking go!
+      <StepCompleteDialog>k__BackingField: []
