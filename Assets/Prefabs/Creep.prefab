@@ -614,15 +614,15 @@ MonoBehaviour:
   _activeQuestsStore: {fileID: 11400000, guid: cbde48a3142d2704499093248bb200f2, type: 2}
   _lootPrefab: {fileID: 7110255469202394270, guid: 4f636d6c3a7c20c41ac1bba7a421ba33, type: 3}
   _lootToSpawn:
-  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: ae42ccacb70cc5b46bcf3bf1999ad6bf, type: 2}
-    <MinAmount>k__BackingField: 2
-    <MaxAmount>k__BackingField: 5
-    <SpawnChance>k__BackingField: 0.7
-  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: e7fa12ec33fbd674a960496f62e783d9, type: 2}
+  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: 16f3ec904c3ade648be3097b6e3340e5, type: 2}
     <MinAmount>k__BackingField: 1
     <MaxAmount>k__BackingField: 3
+    <SpawnChance>k__BackingField: 0.7
+  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: 4120e735eb8dd2a4b92255aadb9acd0a, type: 2}
+    <MinAmount>k__BackingField: 1
+    <MaxAmount>k__BackingField: 2
     <SpawnChance>k__BackingField: 0.3
-  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: 826d8146c3754e942b9ad776d511376c, type: 2}
+  - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: 9f684a078856a5444930044b7c403db9, type: 2}
     <MinAmount>k__BackingField: 1
     <MaxAmount>k__BackingField: 1
     <SpawnChance>k__BackingField: 0.1
@@ -630,7 +630,7 @@ MonoBehaviour:
   - <ItemToSpawn>k__BackingField: {fileID: 11400000, guid: 5c8661e900b456d46ad5fce9f61b1d1a, type: 2}
     <MinAmount>k__BackingField: 1
     <MaxAmount>k__BackingField: 1
-    <SpawnChance>k__BackingField: 1
+    <SpawnChance>k__BackingField: 0.5
   _dropSpread: 0.07
 --- !u!50 &5276488634300042266
 Rigidbody2D:

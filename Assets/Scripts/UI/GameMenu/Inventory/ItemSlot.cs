@@ -25,9 +25,6 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
 
         [SerializeField]
         private TextMeshProUGUI _quantityText;
-        
-        [SerializeField]
-        
 
         private QuantifiableItem _qItem;
 
@@ -35,18 +32,22 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
         {
             _slotImg.sprite = _lockedSlotSprite;
             _quantityText.enabled = false;
+            _itemImg.enabled = false;
         }
 
         public void UnlockSlot()
         {
             _slotImg.sprite = _unoccupiedSlotSprite;
             _quantityText.enabled = false;
+            _itemImg.enabled = false;
         }
 
         public void Populate(QuantifiableItem qItem)
         {
             _qItem = qItem;
             _slotImg.sprite = _occupiedSlotSprite;
+            _itemImg.enabled = true;
+            _itemImg.sprite = _qItem.Item.Sprite;
             _quantityText.enabled = true;
             _quantityText.text = qItem.Quantity.ToString();
         }
