@@ -1,11 +1,10 @@
-﻿using System;
-using ChiciStudios.ProjectPhoenix.Commands;
+﻿using ChiciStudios.ProjectPhoenix.Commands;
 using ChiciStudios.ProjectPhoenix.Commands.CommandActors;
 using ChiciStudios.ProjectPhoenix.Enums;
 using ChiciStudios.ProjectPhoenix.Inputs;
 using UnityEngine;
 
-namespace ChiciStudios.ProjectPhoenix.UI
+namespace ChiciStudios.ProjectPhoenix.UI.GameMenu
 {
     public class GameMenuController : MonoBehaviour, IOpenMenuCommandActor
     {

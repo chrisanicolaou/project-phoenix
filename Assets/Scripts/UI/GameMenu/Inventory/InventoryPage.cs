@@ -1,5 +1,6 @@
 ﻿using System;
 using ChiciStudios.ProjectPhoenix.Items;
+using ChiciStudios.ProjectPhoenix.Utils;
 using UnityEngine;
 
 namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
@@ -7,12 +8,15 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
     public class InventoryPage : MonoBehaviour
     {
         [SerializeField]
-        private ItemSlot[] _itemSlots;
-
-        [SerializeField]
         private ItemStore _inventoryStore;
-
-        private int _inventorySize;
+        
+        [SerializeField]
+        private GameObject _itemSlotPrefab;
+        
+        [SerializeField]
+        private Transform _itemSlotContainer;
+        
+        private ItemSlot[] _itemSlots;
 
         private void OnEnable()
         {
@@ -21,22 +25,18 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
 
         private void Update()
         {
-            if (_inventorySize != _inventoryStore.Items.Count) PopulateItemSlots();
         }
 
         private void PopulateItemSlots()
-        {
-            _inventorySize = _inventoryStore.Items.Count;
-            for (var i = 0; i < _itemSlots.Length; i++)
+        { 
+            _itemSlotContainer.DestroyAllChildren();
+            _itemSlots = new ItemSlot[_inventoryStore.MaxCapacity];
+            for (var i = 0; i < _inventoryStore.MaxCapacity; i++)
             {
-                if (i >= _inventoryStore.MaxCapacity)
-                {
-                    _itemSlots[i].LockSlot();
-                    continue;
-                }
-                
+                var itemSlotObj = Instantiate(_itemSlotPrefab, _itemSlotContainer, false);
+                _itemSlots[i] = itemSlotObj.GetComponent<ItemSlot>();
                 _itemSlots[i].UnlockSlot();
-                if (i < _inventorySize) _itemSlots[i].Populate(_inventoryStore.Items[i]);
+                if (_inventoryStore.Items[i] != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
             }
         }
     }
