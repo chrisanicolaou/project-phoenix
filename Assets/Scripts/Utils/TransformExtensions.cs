@@ -11,7 +11,9 @@ namespace ChiciStudios.ProjectPhoenix.Utils
             {
                 for (int i = childCount - 1; i > -1; i--)
                 {
-                    Object.Destroy(transform.GetChild(i).gameObject);
+                    var child = transform.GetChild(i);
+                    child.SetParent(child.parent.parent);
+                    Object.Destroy(child.gameObject);
                 }
             }
         }

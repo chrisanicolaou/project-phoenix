@@ -3391,8 +3391,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1022026173}
-  - component: {fileID: 1022026174}
   - component: {fileID: 1022026175}
+  - component: {fileID: 1022026176}
   m_Layer: 5
   m_Name: Inventory
   m_TagString: Untagged
@@ -3420,30 +3420,6 @@ RectTransform:
   m_AnchoredPosition: {x: 62, y: -3.06}
   m_SizeDelta: {x: 129.48, y: 76.95}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1022026174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022026172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 0
-  m_StartCorner: 0
-  m_StartAxis: 0
-  m_CellSize: {x: 16, y: 16}
-  m_Spacing: {x: 1, y: 2}
-  m_Constraint: 1
-  m_ConstraintCount: 6
 --- !u!114 &1022026175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3459,6 +3435,21 @@ MonoBehaviour:
   _inventoryStore: {fileID: 11400000, guid: 89084312ff7342147b4716b6a86cbebb, type: 2}
   _itemSlotPrefab: {fileID: 1901297746361196714, guid: b7675eebb589b2b48b25cff14f27499f, type: 3}
   _itemSlotContainer: {fileID: 1022026173}
+--- !u!114 &1022026176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022026172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17305d1b8990420a94a38baa698d698d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cellSize: {x: 16, y: 16}
+  _spacing: {x: 1, y: 2}
+  _columnCount: 6
 --- !u!224 &1043449343 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9083916996154489150, guid: 31aadb409dde81446a965d48ed73fe9f, type: 3}

@@ -1,7 +1,9 @@
 ﻿using System;
 using ChiciStudios.ProjectPhoenix.Items;
+using ChiciStudios.ProjectPhoenix.UI.Utils;
 using ChiciStudios.ProjectPhoenix.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
 {
@@ -17,17 +19,25 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
         private Transform _itemSlotContainer;
         
         private ItemSlot[] _itemSlots;
+        
+        [SerializeField]
+        private NonUpdatingGridView _gridView;
 
         private void OnEnable()
         {
             PopulateItemSlots();
         }
 
+        private void OnDisable()
+        {
+            // GetComponent<GridLayoutGroup>().enabled = true;
+        }
+
         private void Update()
         {
         }
 
-        private void PopulateItemSlots()
+        public void PopulateItemSlots()
         { 
             _itemSlotContainer.DestroyAllChildren();
             _itemSlots = new ItemSlot[_inventoryStore.MaxCapacity];
@@ -35,9 +45,13 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
             {
                 var itemSlotObj = Instantiate(_itemSlotPrefab, _itemSlotContainer, false);
                 _itemSlots[i] = itemSlotObj.GetComponent<ItemSlot>();
+                _itemSlots[i].InventoryIndex = i;
+                _itemSlots[i].ItemStore = _inventoryStore;
+                _itemSlots[i].Page = this;
                 _itemSlots[i].UnlockSlot();
                 if (_inventoryStore.Items[i] != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
             }
+            _gridView.CreateGrid(transform);
         }
     }
 }

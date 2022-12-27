@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816e2e8bb71547469db6109a4d9684c4, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
-  <MaxCapacity>k__BackingField: 3
+  <MaxCapacity>k__BackingField: 6
