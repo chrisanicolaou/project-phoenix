@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ChiciStudios.ProjectPhoenix.GameEvents;
 using ChiciStudios.ProjectPhoenix.Globals;
+using ChiciStudios.ProjectPhoenix.Utils.Extensions;
 using UnityEngine;
 
 namespace ChiciStudios.ProjectPhoenix.Questing.Steps
@@ -17,8 +18,13 @@ namespace ChiciStudios.ProjectPhoenix.Questing.Steps
 
         [field: SerializeField]
         public int KillRequirement { get; set; }
+
+        [SerializeField]
+        private string _enemyProgressFriendlyNameText;
         
         public int CurrentKillCount { get; set; }
+
+        public override string ProgressText => $"{CurrentKillCount.ToTMProColor(Color.red)} out of {KillRequirement.ToTMProColor(Color.yellow)} {_enemyProgressFriendlyNameText} killed";
 
         public override void Activate()
         {

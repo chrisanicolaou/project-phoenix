@@ -14,6 +14,11 @@ namespace ChiciStudios.ProjectPhoenix.Questing.Steps
         [field: SerializeField]
         public int NpcId { get; set; }
 
+        [SerializeField]
+        private string _npcProgressFriendlyNameText;
+
+        public override string ProgressText => $"Talk to {_npcProgressFriendlyNameText}";
+
         public override void Activate()
         {
             base.Activate();

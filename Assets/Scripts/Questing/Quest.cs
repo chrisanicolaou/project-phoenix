@@ -42,6 +42,9 @@ namespace ChiciStudios.ProjectPhoenix.Questing
 
         [field: SerializeField]
         public Quest[] UnlockOnCompletion { get; set; }
+        
+        [field: SerializeField]
+        public QuestReward Reward { get; set; }
 
         public void Unlock()
         {

@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using ChiciStudios.ProjectPhoenix.Enums;
+using ChiciStudios.ProjectPhoenix.Items;
 using ChiciStudios.ProjectPhoenix.Questing;
 using ChiciStudios.ProjectPhoenix.Questing.Steps;
+using ChiciStudios.ProjectPhoenix.VariableSO;
 using UnityEditor;
+using UnityEditorInternal;
 using UnityEngine;
 
 namespace ChiciStudios.ProjectPhoenix.Editor
@@ -59,8 +62,25 @@ namespace ChiciStudios.ProjectPhoenix.Editor
                         }
                         break;
                     default:
-                        throw new ArgumentOutOfRangeException("New quest type has not been added to editor script");
+                        throw new ArgumentOutOfRangeException("New quest step type has not been added to editor script");
                 }
+            }
+
+            _target.Reward.GoldReward = GUILayout.Toggle(_target.Reward.GoldReward, "Gold Reward?");
+
+            if (_target.Reward.GoldReward)
+            {
+                _target.Reward.GoldVariable = EditorGUILayout.ObjectField("Gold Variable",
+                    _target.Reward.GoldVariable, typeof(IntVariable), _target.Reward.GoldVariable) as IntVariable;
+                _target.Reward.GoldAmount = EditorGUILayout.IntField("Amount", _target.Reward.GoldAmount);
+            }
+
+            _target.Reward.ItemReward = GUILayout.Toggle(_target.Reward.ItemReward, "Item Reward?");
+
+            if (_target.Reward.ItemReward)
+            {
+                _target.Reward.InventoryStore = EditorGUILayout.ObjectField("Inventory Store",
+                    _target.Reward.InventoryStore, typeof(ItemStore), _target.Reward.InventoryStore) as ItemStore;
             }
 
             if (GUILayout.Button("Reset"))

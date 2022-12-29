@@ -13,8 +13,9 @@ namespace ChiciStudios.ProjectPhoenix.VariableSO
             set
             {
                 {
+                    var previousValue = _value;
                     _value = _minimumZeroValue ? Mathf.Max(0, value) : value;
-                    ValueChanged?.Invoke();
+                    if (previousValue != _value) ValueChanged?.Invoke();
                 }
             }
         }

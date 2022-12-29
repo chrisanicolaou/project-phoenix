@@ -13,6 +13,8 @@ namespace ChiciStudios.ProjectPhoenix.Questing.Steps
         [field: SerializeField]
         public Quest ParentQuest { get; set; }
 
+        public abstract string ProgressText { get; }
+
         public QuestState State { get; set; } = QuestState.Locked;
 
         public virtual void Activate()

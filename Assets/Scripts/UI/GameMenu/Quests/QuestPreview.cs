@@ -1,4 +1,5 @@
 ﻿using ChiciStudios.ProjectPhoenix.Questing;
+using ChiciStudios.ProjectPhoenix.Utils.Extensions;
 using TMPro;
 using UnityEngine;
 
@@ -6,6 +7,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
 {
     public class QuestPreview: MonoBehaviour
     {
+        public QuestLookupNode CurrentlySelectedNode { get; set; }
         [SerializeField]
         private TextMeshProUGUI _title;
         
@@ -18,12 +20,19 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
         [SerializeField]
         private TextMeshProUGUI _reward;
 
-        public void LoadQuest(Quest quest)
+        public void LoadQuest(QuestLookupNode questNode)
         {
-            _title.text = quest.Name;
-            _description.text = quest.Description;
-            _stepProgress.text = "<color=\"red\">Not implemented!";
-            _reward.text = "<color=\"red\">Not implemented!";
+            if (CurrentlySelectedNode != null) CurrentlySelectedNode.Deselect();
+
+            CurrentlySelectedNode = questNode;
+            _title.text = questNode.Quest.Name;
+            _description.text = questNode.Quest.Description;
+            _stepProgress.text = questNode.Quest.Steps[questNode.Quest.CurrentStepIndex].ProgressText;
+            _reward.text = questNode.Quest.Reward.GoldReward ? $"Reward: {(questNode.Quest.Reward.GoldAmount + "g").ToTMProColor(Color.yellow)}" : "Reward:";
+            foreach (var itemReward in questNode.Quest.Reward.Items)
+            {
+                _reward.text += $"\n{itemReward.Quantity}x {itemReward.Item.Name}".ToTMProColor(Color.magenta);
+            }
         }
     }
 }

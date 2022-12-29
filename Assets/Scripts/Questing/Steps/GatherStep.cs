@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using ChiciStudios.ProjectPhoenix.GameEvents;
 using ChiciStudios.ProjectPhoenix.Globals;
+using ChiciStudios.ProjectPhoenix.Utils.Extensions;
 using UnityEngine;
 
 namespace ChiciStudios.ProjectPhoenix.Questing.Steps
@@ -17,8 +18,13 @@ namespace ChiciStudios.ProjectPhoenix.Questing.Steps
 
         [field: SerializeField]
         public int GatherRequirement { get; set; }
+
+        [SerializeField]
+        private string _gatherProgressFriendlyNameText;
         
         public int CurrentGatherCount { get; set; }
+
+        public override string ProgressText => $"{CurrentGatherCount.ToTMProColor(Color.red)} out of {GatherRequirement.ToTMProColor(Color.yellow)} {_gatherProgressFriendlyNameText} gathered";
 
         public override void Activate()
         {

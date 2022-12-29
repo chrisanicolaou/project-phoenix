@@ -21,10 +21,14 @@ MonoBehaviour:
     out at strangers that walk past. Destroy these trees for the good of the village!
   <Type>k__BackingField: 0
   <Steps>k__BackingField:
-  - rid: 4120348738366472196
+  - rid: 4120349028510859264
   - rid: 4120348738366472194
   <State>k__BackingField: 1
   <UnlockOnCompletion>k__BackingField: []
+  <Reward>k__BackingField:
+    <Items>k__BackingField:
+    - <Item>k__BackingField: {fileID: 11400000, guid: 826d8146c3754e942b9ad776d511376c, type: 2}
+      <Quantity>k__BackingField: 10
   references:
     version: 2
     RefIds:
@@ -35,14 +39,16 @@ MonoBehaviour:
         <ParentQuest>k__BackingField: {fileID: 11400000}
         _npcInteractionCompleteEvent: {fileID: 11400000, guid: 576730a44f654fa4c9527d5f9b6716f4, type: 2}
         <NpcId>k__BackingField: 0
+        _npcProgressFriendlyNameText: 
         <ItemId>k__BackingField: 3
         <AmountToReturn>k__BackingField: 5
         _inventory: {fileID: 11400000, guid: 89084312ff7342147b4716b6a86cbebb, type: 2}
-    - rid: 4120348738366472196
-      type: {class: GatherStep, ns: ChiciStudios.ProjectPhoenix.Questing.Steps, asm: Assembly-CSharp}
+    - rid: 4120349028510859264
+      type: {class: CombatStep, ns: ChiciStudios.ProjectPhoenix.Questing.Steps, asm: Assembly-CSharp}
       data:
-        <Type>k__BackingField: 3
+        <Type>k__BackingField: 2
         <ParentQuest>k__BackingField: {fileID: 11400000}
-        _lootGatheredEvent: {fileID: 11400000, guid: a37991ffa36c8d14280d61813b61502b, type: 2}
-        <ItemId>k__BackingField: 3
-        <GatherRequirement>k__BackingField: 5
+        _enemyKilledEvent: {fileID: 11400000, guid: 2d9397bae5ed6854e9d3678269c13318, type: 2}
+        <EnemyId>k__BackingField: 0
+        <KillRequirement>k__BackingField: 10
+        _enemyProgressFriendlyNameText: trees
