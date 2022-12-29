@@ -10,16 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9e8b30099f4848c0893759b13049de6c, type: 3}
-  m_Name: 0_SaveMrFox
+  m_Name: 1_DestroyTrees
   m_EditorClassIdentifier: 
   _activeQuestsStore: {fileID: 11400000, guid: cbde48a3142d2704499093248bb200f2, type: 2}
   _questUnlockedEvent: {fileID: 11400000, guid: a3d504e24c2caa541b9ec331e4d661f3, type: 2}
   _questActivatedEvent: {fileID: 11400000, guid: 40c593e741789f54787554beb6c60994, type: 2}
-  <Id>k__BackingField: 0
-  <Name>k__BackingField: Save Mr. Fox!
-  <Description>k__BackingField: The bandits that have plagued the plains have stolen
-    Mr. Fox's coins. Return them to him and he will pay generously!
-  <Type>k__BackingField: 2
+  <Id>k__BackingField: 1
+  <Name>k__BackingField: Destroy Evil Trees!
+  <Description>k__BackingField: Trees have gone all weird in the plains, lashing
+    out at strangers that walk past. Destroy these trees for the good of the village!
+  <Type>k__BackingField: 0
   <Steps>k__BackingField:
   - rid: 4120348738366472196
   - rid: 4120348738366472194
