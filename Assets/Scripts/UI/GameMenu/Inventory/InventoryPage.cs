@@ -49,7 +49,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
                 _itemSlots[i].ItemStore = _inventoryStore;
                 _itemSlots[i].Page = this;
                 _itemSlots[i].UnlockSlot();
-                if (_inventoryStore.Items[i] != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
+                if (_inventoryStore.Items[i].Item != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
             }
             _gridView.CreateGrid(transform);
         }

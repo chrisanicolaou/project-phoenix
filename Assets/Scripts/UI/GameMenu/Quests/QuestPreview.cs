@@ -33,6 +33,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
             {
                 _reward.text += $"\n{itemReward.Quantity}x {itemReward.Item.Name}".ToTMProColor(Color.magenta);
             }
+            questNode.OnSelect();
         }
     }
 }

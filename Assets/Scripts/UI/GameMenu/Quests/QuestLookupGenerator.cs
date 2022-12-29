@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using ChiciStudios.ProjectPhoenix.Enums;
 using ChiciStudios.ProjectPhoenix.Questing;
 using ChiciStudios.ProjectPhoenix.Utils;
 using UnityEngine;
@@ -15,6 +17,9 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
 
         [SerializeField]
         private QuestPreview _preview;
+
+        [SerializeField]
+        private QuestTabGroup _tabGroup;
         
         [field: SerializeField]
         public Quest[] QuestPool { get; set; }
@@ -22,17 +27,24 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
         private void OnEnable()
         {
             _questLookupContainer.DestroyAllChildren();
-            PopulateQuestLookup();
+            _tabGroup.SelectMain();
         }
 
-        private void PopulateQuestLookup()
+        public void PopulateQuestLookup(params QuestType[] types)
         {
-            foreach (var quest in QuestPool)
+            bool firstSelected = false;
+            _questLookupContainer.DestroyAllChildren();
+            foreach (var quest in QuestPool.Where(q => types.Contains(q.Type)))
             {
                 var questNode = Instantiate(_questLookupNodePrefab, _questLookupContainer, false);
                 var node = questNode.GetComponent<QuestLookupNode>();
                 node.Preview = _preview;
                 node.AssignQuest(quest);
+                if (!firstSelected)
+                {
+                    firstSelected = true;
+                    _preview.LoadQuest(node);
+                }
             }
         }
     }

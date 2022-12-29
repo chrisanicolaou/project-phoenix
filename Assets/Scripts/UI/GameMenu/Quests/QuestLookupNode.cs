@@ -37,7 +37,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
         public QuestPreview Preview { get; set; }
         private TweenerCore<Color, Color, ColorOptions> _hoveredTween;
 
-        private void Start()
+        private void Awake()
         {
             _background = GetComponentInChildren<Image>();
             _backgroundOriginalCol = _background.color;
@@ -76,10 +76,13 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Quests
         public void OnPointerClick(PointerEventData eventData)
         {
             if (!_hovered) return;
-            
-            _selected = true;
             Preview.LoadQuest(this);
+        }
+
+        public void OnSelect()
+        {
             _background.color = _selectedCol;
+            _selected = true;
         }
     }
 }
