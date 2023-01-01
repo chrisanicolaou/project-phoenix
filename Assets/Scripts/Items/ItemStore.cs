@@ -8,16 +8,28 @@ namespace ChiciStudios.ProjectPhoenix.Items
     [CreateAssetMenu(fileName = "NewItemStore", menuName = "ScriptableObjects/Items/ItemStore", order = 1)]
     public class ItemStore : ScriptableObject
     {
+        [SerializeField]
         private QuantifiableItem[] _items;
 
-        public QuantifiableItem[] Items => _items ??= new QuantifiableItem[MaxCapacity];
+        public QuantifiableItem[] Items
+        {
+            get
+            {
+                if (_items == null || _items.Length == 0)
+                {
+                    _items = new QuantifiableItem[MaxCapacity];
+                }
+
+                return _items;
+            }
+        }
 
         [field: SerializeField]
         public int MaxCapacity { get; set; } = 10;
 
         public bool TryAdd(QuantifiableItem qItem)
         {
-            var i = Array.FindIndex(Items, q => q != null && q.Item.Id == qItem.Item.Id);
+            var i = Array.FindIndex(Items, q => q != null && q.Item != null && q.Item.Id == qItem.Item.Id);
             
             if (i == -1)
             {
@@ -30,7 +42,7 @@ namespace ChiciStudios.ProjectPhoenix.Items
 
         private bool AddNew(QuantifiableItem qItem)
         {
-            var i = Array.FindIndex(Items, q => q == null);
+            var i = Array.FindIndex(Items, q => q == null || q.Item == null);
             if (i == -1) return false;
             Items[i] = qItem;
             return true;
@@ -38,7 +50,7 @@ namespace ChiciStudios.ProjectPhoenix.Items
 
         public void RemoveById(int id, int quantity)
         {
-            var i = Array.FindIndex(Items, q => q != null && q.Item.Id == id);
+            var i = Array.FindIndex(Items, q => q != null && q.Item != null && q.Item.Id == id);
             
             if (i == -1)
             {
@@ -64,12 +76,11 @@ namespace ChiciStudios.ProjectPhoenix.Items
         {
             RemoveById(qItem.Item.Id, qItem.Quantity);
         }
-
-        # if UNITY_EDITOR
+        
         public void Clear()
         {
             _items = new QuantifiableItem[MaxCapacity];
         }
-        #endif
+        
     }
 }

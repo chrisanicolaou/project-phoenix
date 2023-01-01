@@ -27,16 +27,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
         {
             PopulateItemSlots();
         }
-
-        private void OnDisable()
-        {
-            // GetComponent<GridLayoutGroup>().enabled = true;
-        }
-
-        private void Update()
-        {
-        }
-
+        
         public void PopulateItemSlots()
         { 
             _itemSlotContainer.DestroyAllChildren();
@@ -49,7 +40,7 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
                 _itemSlots[i].ItemStore = _inventoryStore;
                 _itemSlots[i].Page = this;
                 _itemSlots[i].UnlockSlot();
-                if (_inventoryStore.Items[i].Item != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
+                if (_inventoryStore.Items[i] != null && _inventoryStore.Items[i].Item != null) _itemSlots[i].Populate(_inventoryStore.Items[i]);
             }
             _gridView.CreateGrid(transform);
         }
