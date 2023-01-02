@@ -51,6 +51,11 @@ namespace ChiciStudios.ProjectPhoenix.UI.GameMenu.Inventory
             _quantityText.text = qItem.Quantity.ToString();
         }
 
+        public void OnItemDrag(PointerEventData eventData)
+        {
+            
+        }
+
         public void OnDrop(PointerEventData eventData)
         {
             var draggedItemSlot = eventData.pointerDrag.GetComponentInParent<ItemSlot>();

@@ -12,4 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816e2e8bb71547469db6109a4d9684c4, type: 3}
   m_Name: Inventory
   m_EditorClassIdentifier: 
+  _items:
+  - <Item>k__BackingField: {fileID: 11400000, guid: 16f3ec904c3ade648be3097b6e3340e5, type: 2}
+    <Quantity>k__BackingField: 4
+  - <Item>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <Item>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <Item>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
+  - <Item>k__BackingField: {fileID: 11400000, guid: 4120e735eb8dd2a4b92255aadb9acd0a, type: 2}
+    <Quantity>k__BackingField: 2
+  - <Item>k__BackingField: {fileID: 0}
+    <Quantity>k__BackingField: 0
   <MaxCapacity>k__BackingField: 6
